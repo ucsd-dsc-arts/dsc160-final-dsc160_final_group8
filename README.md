@@ -4,10 +4,10 @@ DSC160 Data Science and the Arts - Final Project - Generative Arts - Spring 2020
 
 Project Team Members: 
 - Rakesh Senthilvelan, rsenthil@ucsd.edu
-- Firstname Lastname2, name2@ucsd.edu
-- Firstname Lastname3, name3@ucsd.edu
-- Firstname Lastname4, name4@ucsd.edu
-- Firstname Lastname5, name5@ucsd.edu
+- Mizuki Kadowaki, mikadowa@ucsd.edu
+- Anurag Pamuru, anpamuru@ucsd.edu
+- Praveen Nair, prnair@ucsd.edu
+- Shutong Li, shl636@ucsd.edu
 
 ## Abstract
 
@@ -15,15 +15,31 @@ Project Team Members:
 
 For the project proposal, please write a short abstact addressing the questions below. You need to replace the entire contents of this section with one to two paragraphs addressing the following:
 
-- What is your concept for a generative art project? 
-- What methods/networks/techniques will you employ (include links to technical precedents/code bases)
-- What training data (if any) will you use for your project? 
-- What kind of results do you hope that your system will produce?
-- How will you present your result/what form will your output take?
-- What if any challenges to you think may arise as you are working with this?
-- How are you expanding on topics we have covered in class? 
-- Why is it interesting? (personally, culturally, politically, other)
-- List three papers / art projects that are references for this work.
+- What is your concept for a generative art project? DONE
+- What methods/networks/techniques will you employ (include links to technical precedents/code bases)NEEDS WORK
+- What training data (if any) will you use for your project? DONE
+- What kind of results do you hope that your system will produce? DONE
+- How will you present your result/what form will your output take? DONE
+- What if any challenges to you think may arise as you are working with this? DONE
+- How are you expanding on topics we have covered in class? DONE, MAY NEED WORK
+- Why is it interesting? (personally, culturally, politically, other) DONE
+- List three papers / art projects that are references for this work. DONE
+
+The concept for our generative art project is to look into various speeches and addresses, both verbally and written, given by the heads of states of the United States of America, Canada, and the United Kingdom in order to generate speeches that will be based off of an inputted keyword. For our training data, we will use data from the United States' State of the Union addresses from a dataset sourced from Kaggle, Canadian parliamentary speeches sourced from the Library and Archives of Canada, and British Parliamentary speeches sourced from the ParlSpeech V2 data set from Harvard University's Dataverse. We hope that our system will produce speeches that, from inputted keywords, produce speeches that can mimic diplomatic and political language while being based around the keywords. Our output will be presented by the model in text form, and we hope to present some examples in a creative manner such as spoken form. 
+
+Some challenges we believe may be faced can be thematic issues in produced speeches, which we believe may come up due to models potentially not understanding the meanings of the words it is putting into its output. Also, broad and non-specific keywords may produce speeches that might have almost no direction. We will be expanding upon concepts covered in the class such as generative art text, as seen in Lecture 9, utilizing generative systems. We find this interesting personally, culturally, and politically. It will be interesting to see how different keywords yield different word choices used in the outputs and whether certain keyword inputs relate to certain time periods and therefore certain language choices. It will also be interesting politically to see the word choices of heads of states and to see what sorts of language are common amongst all the different speeches within the dataset. 
+
+Below are some of the papers and art projects we used as references for this work:
+- Poltical Speech Generation by Valentin Kassarnig
+https://arxiv.org/abs/1601.03313
+https://github.com/valentin012/conspeech
+
+- Obama RNN by samim
+https://medium.com/@samim/obama-rnn-machine-generated-political-speeches-c8abd18a2ea0
+https://github.com/samim23/obama-rnn/
+
+- Automated Speech Generation from UN General Assembly Statements: Mapping Risks in AI Generated Texts by Joseph Bullock and Miguel Luengo-Oroz
+https://arxiv.org/pdf/1906.01946.pdf
 
 ## Data and Model
 
