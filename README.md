@@ -96,6 +96,8 @@ The subsequent paragraphs could address questions including:
 
 Provide an account of individual members and their efforts/contributions to the specific tasks you accomplished.
 
+Rakesh - Abstract
+
 ## Technical Notes and Dependencies
 
 Any implementation details or notes we need to repeat your work. 
