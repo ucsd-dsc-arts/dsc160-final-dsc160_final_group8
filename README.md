@@ -31,14 +31,17 @@ Some challenges we believe may be faced can be thematic issues in produced speec
 
 Below are some of the papers and art projects we used as references for this work:
 - Poltical Speech Generation by Valentin Kassarnig
+
 https://arxiv.org/abs/1601.03313
 https://github.com/valentin012/conspeech
 
 - Obama RNN by samim
+
 https://medium.com/@samim/obama-rnn-machine-generated-political-speeches-c8abd18a2ea0
 https://github.com/samim23/obama-rnn/
 
 - Automated Speech Generation from UN General Assembly Statements: Mapping Risks in AI Generated Texts by Joseph Bullock and Miguel Luengo-Oroz
+
 https://arxiv.org/pdf/1906.01946.pdf
 
 ## Data and Model
