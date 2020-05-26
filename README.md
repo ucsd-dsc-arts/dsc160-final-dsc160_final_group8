@@ -16,7 +16,7 @@ Project Team Members:
 For the project proposal, please write a short abstact addressing the questions below. You need to replace the entire contents of this section with one to two paragraphs addressing the following:
 
 - What is your concept for a generative art project? DONE
-- What methods/networks/techniques will you employ (include links to technical precedents/code bases)NEEDS WORK
+- What methods/networks/techniques will you employ (include links to technical precedents/code bases) DONE
 - What training data (if any) will you use for your project? DONE
 - What kind of results do you hope that your system will produce? DONE
 - How will you present your result/what form will your output take? DONE
@@ -26,6 +26,8 @@ For the project proposal, please write a short abstact addressing the questions 
 - List three papers / art projects that are references for this work. DONE
 
 The concept for our generative art project is to look into various speeches and addresses, both verbally and written, given by the heads of states of the United States of America, Canada, and the United Kingdom in order to generate speeches that will be based off of an inputted keyword. We plan on using a recurrent neural network (RNN) model with Tensorflow, as seen [here](https://www.tensorflow.org/tutorials/text/text_generation) to generate our text, after preprocessing the corpus data. For our training data, we will use data from the United States' State of the Union addresses from a dataset sourced from Kaggle, Canadian parliamentary speeches sourced from the Library and Archives of Canada, and British Parliamentary speeches sourced from the ParlSpeech V2 data set from Harvard University's Dataverse. We hope that our system will produce speeches that, from inputted keywords, produce speeches that can mimic diplomatic and political language while being based around the keywords. Our output will be presented by the model in text form, and we hope to present some examples in a creative manner such as spoken form. 
+
+The first matter on the table is the pre-processing of this data. For this matter, we hope to employ the sk-learn's n-grams and POS Taggers to determine and classify words of interest. From then on, we will use an RNN much like Stanford's char-rnn (https://github.com/karpathy/char-rnn) to generate the text based on given keywords. We can also use latent Dirichlet allocation along the lines of Valentin Kassarnig to better judge what groups of words belong to certain topics. The final matter of concern is the training of our AI. We plan to use an AWS' EC2 compute instances to cost-effectively train our model.
 
 Some challenges we believe may be faced can be thematic issues in produced speeches, which we believe may come up due to models potentially not understanding the meanings of the words it is putting into its output. Also, broad and non-specific keywords may produce speeches that might not have any direction. We will be expanding upon concepts covered in the class such as generative art text, as seen in Lecture 9, utilizing generative systems. We find this interesting personally, culturally, and politically. It will be interesting to see how different keywords yield different word choices used in the outputs and whether certain keyword inputs relate to certain time periods and therefore certain language choices. It will also be interesting politically to see the word choices of heads of states and to see what sorts of language are common amongst all the different speeches within the dataset. 
 
@@ -97,6 +99,7 @@ The subsequent paragraphs could address questions including:
 Provide an account of individual members and their efforts/contributions to the specific tasks you accomplished.
 
 Rakesh - Abstract
+Anurag - Abstract
 
 ## Technical Notes and Dependencies
 
