@@ -15,15 +15,15 @@ Project Team Members:
 
 For the project proposal, please write a short abstact addressing the questions below. You need to replace the entire contents of this section with one to two paragraphs addressing the following:
 
-- What is your concept for a generative art project? DONE
-- What methods/networks/techniques will you employ (include links to technical precedents/code bases) DONE
-- What training data (if any) will you use for your project? DONE
-- What kind of results do you hope that your system will produce? DONE
-- How will you present your result/what form will your output take? DONE
-- What if any challenges to you think may arise as you are working with this? DONE
-- How are you expanding on topics we have covered in class? DONE, MAY NEED WORK
-- Why is it interesting? (personally, culturally, politically, other) DONE
-- List three papers / art projects that are references for this work. DONE
+- What is your concept for a generative art project?
+- What methods/networks/techniques will you employ (include links to technical precedents/code bases)
+- What training data (if any) will you use for your project?
+- What kind of results do you hope that your system will produce?
+- How will you present your result/what form will your output take?
+- What if any challenges to you think may arise as you are working with this?
+- How are you expanding on topics we have covered in class?
+- Why is it interesting? (personally, culturally, politically, other)
+- List three papers / art projects that are references for this work.
 
 The concept for our generative art project is to look into various speeches and addresses, both verbally and written, given by the heads of states of the United States of America, Canada, and the United Kingdom in order to generate speeches that will be based off of an inputted keyword. We plan on using a recurrent neural network (RNN) model with Tensorflow, as seen [here](https://www.tensorflow.org/tutorials/text/text_generation) to generate our text, after preprocessing the corpus data. For our training data, we will use data from the United States' State of the Union addresses from a dataset sourced from Kaggle, Canadian parliamentary speeches sourced from the Library and Archives of Canada, and British Parliamentary speeches sourced from the ParlSpeech V2 data set from Harvard University's Dataverse. We hope that our system will produce speeches that, from inputted keywords, produce speeches that can mimic diplomatic and political language while being based around the keywords. Our output will be presented by the model in text form, and we hope to present some examples in a creative manner such as spoken form. 
 
