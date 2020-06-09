@@ -52,22 +52,18 @@ https://arxiv.org/pdf/1906.01946.pdf
 
 (10 points) 
 
-In the final submission, this section will describe both the data you use for this project and any pre-existing models/neural nets. For each you should provide the name, a textual description, and a link. If there is a paper (for neural net) link that as well.
-- Such and such Neural Net. The short description of this neural net. 
-  - [link to code]().
-  - [Title of Paper with Link](). 
-- Training data. Short description of training data including bibliographic info. [link to data]().
+We will be using the gpt2-small model (the one with 744M parameters) to finetune a model for every president based on the speeches they made. After training we would let every model generate a passage following the given prompt "My fellow americans". 
+- gpt2 Model
+  - [code](https://github.com/openai/gpt-2)
+  - [More about gpt2 model from OpenAI](https://openai.com/blog/better-language-models/). 
+- Dataset description 
+  - The dataset comes from kaggle ([link here](https://www.kaggle.com/littleotter/united-states-presidential-speeches?select=sixth_party_corpus.csv&fbclid=IwAR2Wl6dWgOppG3TRBsktnf62jwkEmjzBl57NUj3rPnVsr77LZ5MInSCJrbI)). The dataset is a condensed collection of all the presidential speeches made by every president. The dataset was initially scraped from [here](https://millercenter.org/the-presidency/presidential-speeches)
 
 ## Code
 
 (20 points)
-
-This section will link to the various code for your project (stored within this repository). Your code should be executable on datahub, should we choose to replicate your result. This includes code for: 
-
-- code for data acquisition/scraping
-- code for preprocessing
-- training code (if appropriate)
-- generative methods
+The code for preprocessing/generating training data from the kaggle dataset and the training/generating process is [here](./code/gpt2.ipynb).
+As mentioned above, the dataset for the presidential speeches was initially taken from Kaggle. The speeches in the dataset are then isolated out and stored in individual txt files for the gpt2 models to be trained on. For each training set, the model is training with maximum of 750 steps and with other hyperparameters set as default. The training time ended up taking quite a while, some methods of early stop can be considered using to minimize training time. 
 
 Link each of these items to your .ipynb or .py files within this seection, and provide a brief explanation of what the code does. Reading this section we should have a sense of how to run your code.
 
@@ -77,15 +73,15 @@ Link each of these items to your .ipynb or .py files within this seection, and p
 
 This section should summarize your results and will embed links to documentation to significant outputs. This should document both process and show artistic results. This can include figures, sound files, videos, bitmaps, as appropriate to your generative art idea. Each result should include a brief textual description, and all should be listed below: 
 
-- image files (`.jpg`, `.png` or whatever else is appropriate)
-- audio files (`.wav`, `.mp3`)
-- written text as `.pdf`
+- The output of the simulated speech given the prompt "My fellow americans, " is recoreded in this [document](https://docs.google.com/document/d/1uqdmB1EyV2X_JCb5v0Z3M82cty0TxXzsgPxfxc4jo1A/edit?fbclid=IwAR0N-LUlHdfOig7Aq7d_p-YvIjDx8gMfolDy_T81vC6VhYkjuGTkKOEAtnY). 
+
 
 ## Discussion
 
 (30 points, three to five paragraphs)
 
-The first paragraph should be a short summary describing your results.
+The outputs captures the rhetorics of each presidents extremely well. For instance, Trump's speech consists of unassuming wording and structure as well as his iconic MAGA phrase; Obama's speech mimics his crips speech structure with the strong and effective repetition. In addition, the semantics are well-captured as well. Trump and Obama again are the two good examples. The simulated speech from the former promotes strong nationalism and almost militarism while the one from the latter promotes general welfare for the country. In short, the simulated speeches understands the rough ideology behind each president. Aside from the capture of the semantics and the rhetorics, the interesting thing is that the historical period in which each president makes their speech largely defines the tone and the subcontext of each simulated speech. 
+
 
 The subsequent paragraphs could address questions including:
 - Why is this culturally innovative?
