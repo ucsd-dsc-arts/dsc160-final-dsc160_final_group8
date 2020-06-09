@@ -25,7 +25,7 @@ For the project proposal, please write a short abstact addressing the questions 
 - Why is it interesting? (personally, culturally, politically, other)
 - List three papers / art projects that are references for this work.
 
-The concept for our generative art project is to look into various speeches and addresses, both verbally and written, given by presidents of the United States of America in order to generate speeches that will be based off of an inputted keyword. We plan on using a recurrent neural network (RNN) model with Tensorflow, as seen [here](https://www.tensorflow.org/tutorials/text/text_generation) to generate our text, after preprocessing the corpus data using GPT-2 models. For our training data, we will use presidential speech data from Kaggle. We hope that our system will produce speeches that, from inputted keywords, produce speeches that can mimic diplomatic and political language while being based around the keywords. Our output will be presented by the model in text form, and we hope to present some examples in a creative manner such as spoken form. 
+The concept for our generative art project is to look into various speeches and addresses, both verbally and written, given by presidents of the United States of America in order to generate speeches that will be based off of an inputted keyword. We plan on using OpenAI's GPT-2 text models in order to generate our text. For our training data, we will use data from presidential speeches. We hope that our system will produce speeches that, from inputted keywords, produce speeches that can mimic diplomatic and political language while being based around the keywords. Our output will be presented by the model in text form, and we hope to present some examples in a creative manner such as spoken form. 
 
 The first matter on the table is the pre-processing of this data. For this matter, we hope to employ the sk-learn's n-grams and POS Taggers to determine and classify words of interest. From then on, we will use an RNN much like Stanford's char-rnn (https://github.com/karpathy/char-rnn) to generate the text based on given keywords. We can also use latent Dirichlet allocation along the lines of Valentin Kassarnig to better judge what groups of words belong to certain topics. The final matter of concern is the training of our AI. We plan to use an AWS' EC2 compute instances to cost-effectively train our model.
 
@@ -52,7 +52,7 @@ https://arxiv.org/pdf/1906.01946.pdf
 
 (10 points) 
 
-We will be using the gpt2-small model (the one with 744M parameters) to finetune a model for every president based on the speeches they made. After training we would let every model generate a passage following the given prompt "My fellow americans". 
+We will be using the gpt2-small model (the one with 124M parameters) to finetune a model for every president based on the speeches they made. After training we would let every model generate a passage following the given prompt "My fellow americans". 
 - gpt2 Model
   - [code](https://github.com/openai/gpt-2)
   - [More about gpt2 model from OpenAI](https://openai.com/blog/better-language-models/). 
@@ -73,7 +73,7 @@ Link each of these items to your .ipynb or .py files within this seection, and p
 
 This section should summarize your results and will embed links to documentation to significant outputs. This should document both process and show artistic results. This can include figures, sound files, videos, bitmaps, as appropriate to your generative art idea. Each result should include a brief textual description, and all should be listed below: 
 
-- The output of the simulated speech given the prompt "My fellow americans, " is recoreded in this [document](https://docs.google.com/document/d/1uqdmB1EyV2X_JCb5v0Z3M82cty0TxXzsgPxfxc4jo1A/edit?fbclid=IwAR0N-LUlHdfOig7Aq7d_p-YvIjDx8gMfolDy_T81vC6VhYkjuGTkKOEAtnY). 
+- The output of the simulated speech given the prompt "My fellow americans, " is recorded in this [document](https://docs.google.com/document/d/1uqdmB1EyV2X_JCb5v0Z3M82cty0TxXzsgPxfxc4jo1A/edit?fbclid=IwAR0N-LUlHdfOig7Aq7d_p-YvIjDx8gMfolDy_T81vC6VhYkjuGTkKOEAtnY).
 
 
 ## Discussion
