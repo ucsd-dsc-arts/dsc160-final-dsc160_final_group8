@@ -1,4 +1,4 @@
-# Project Title
+# Presidential Speechwriting with GPT-2
 
 DSC160 Data Science and the Arts - Final Project - Generative Arts - Spring 2020
 
