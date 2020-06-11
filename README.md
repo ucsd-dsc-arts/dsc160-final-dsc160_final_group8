@@ -125,9 +125,5 @@ We used [Max Woolf's gpt-2-simple Python package](https://github.com/minimaxir/g
 ## Reference
 
 All references to papers, techniques, previous work, repositories you used should be collected at the bottom:
-- Papers
-- Repositories
-- Blog posts
-
 - [GPT-2 explanation](https://openai.com/blog/better-language-models/) and [code](https://github.com/openai/gpt-2)
 - [gpt-2-simple](https://github.com/minimaxir/gpt-2-simple)
