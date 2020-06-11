@@ -128,8 +128,11 @@ Any implementation details or notes we need to repeat your work.
 - Does this code need to run on some other (non-datahub) platform? (CoLab, etc.)
 
 We used [Max Woolf's gpt-2-simple Python package](https://github.com/minimaxir/gpt-2-simple) as the basis for this project, which itself uses tensorflow, regex, requests, tqdm, numpy, and toposort. We also used pandas and os for small tasks to extract the data. The code all runs on Datahub, by far most efficiently on GPU-enabled servers.
+
 ## Reference
 
 All references to papers, techniques, previous work, repositories you used should be collected at the bottom:
 - [GPT-2 explanation](https://openai.com/blog/better-language-models/) and [code](https://github.com/openai/gpt-2)
 - [gpt-2-simple](https://github.com/minimaxir/gpt-2-simple)
+- [Kaggle data source](https://www.kaggle.com/littleotter/united-states-presidential-speeches?select=corpus.csv)
+- [Miller Center Presidential Speech Archive](https://millercenter.org/the-presidency/presidential-speeches)
