@@ -27,7 +27,7 @@ For the project proposal, please write a short abstract addressing the questions
 
 The concept for our generative art project is to look into various speeches and addresses, both verbally and written, given by different presidents of the United States of America in order to generate speeches that will be based off of an inputted keyword or phrase. We plan on using OpenAI's GPT-2 text models in order to generate our text. We will be training different models for a few select presidents who we consider to stand out in terms of their speech. For our training data, we will use data from presidential speeches. We hope that our system will produce speeches that, from inputted keywords, produce speeches that can mimic diplomatic and political language while being based around the keywords. We hope to be able to compare how different presidents will produce speeches and each of the models will be able to embody the speech style of a certain president. Our output will be presented by the model in text form, and we hope to present some examples in a creative manner such as spoken form. 
 
-The first matter on the table is the pre-processing of this data. For this matter, we hope to employ the sk-learn's n-grams and POS Taggers to determine and classify words of interest. From then on, we will use an RNN much like Stanford's char-rnn (https://github.com/karpathy/char-rnn) to generate the text based on given keywords. We can also use latent Dirichlet allocation along the lines of Valentin Kassarnig to better judge what groups of words belong to certain topics. The final matter of concern is the training of our AI. We plan to use an AWS' EC2 compute instances to cost-effectively train our model.
+In order to train models to each selected president and generate speeches through those models, we will use OpenAI's GPT-2 model. We will train 124M models, which are named to represent the number of parameters used in the model, on speeches given by selected preisdents, training a model to each president. From here, we will use the GPT-2 model along with inputted prefixes such as phrases, sentences, or paragraphs in order to see how each president would complete a certain speech based on its intro. 
 
 Some challenges we believe may be faced can be thematic issues in produced speeches, which we believe may come up due to models potentially not understanding the meanings of the words it is putting into its output. Also, broad and non-specific keywords may produce speeches that might not have any direction. We will be expanding upon concepts covered in the class such as generative art text, as seen in Lecture 9, utilizing generative systems. We find this interesting personally, culturally, and politically. It will be interesting to see how different keywords yield different word choices used in the outputs and whether certain keyword inputs relate to certain time periods and therefore certain language choices. It will also be interesting politically to see the word choices of heads of states and to see what sorts of language are common amongst all the different speeches within the dataset. 
 
@@ -111,7 +111,7 @@ The subsequent paragraphs could address questions including:
 
 Provide an account of individual members and their efforts/contributions to the specific tasks you accomplished.
 
-Rakesh - Abstract
+Rakesh - Abstract, write-up, presentation
 
 Anurag - Abstract
 Praveen - Trained presidential models, generated joint presidential speech
