@@ -59,6 +59,7 @@ We will be using OpenAI's gpt2-small model (the one with 124M parameters) to fin
 ## Code
 
 (20 points)
+
 The majority of the code for this project was run on UCSD's [Datahub platform](datahub.ucsd.edu), due to the availability of CPU, RAM, and especially GPU resources that are largely unavailable to most users. This does mean that folder and file references might not be consistent between notebooks, since they were run on personal instances of the Datahub.
 The code for preprocessing the presidential speech data from the kaggle dataset, training the model, and generating samples process is [here](./code/gpt2.ipynb). In this notebook, the cells for training and generating data were run repeatedly on different data/different models, which is why the notebook is so short. This is because, unfortunately, the Python session needs to be restarted in order to train a new model or generate a new text sample, so there is no use to doing this process iteratively or in order, As mentioned above, the dataset for the presidential speeches was initially taken from Kaggle. The speeches in the dataset are then isolated out and stored in individual txt files for the gpt2 models to be trained on. For each training set, the model is trained with 750 steps and with other hyperparameters set as default. Even with the ample resources and GPU clusters provided by Datahub, the training process of the model took around 20 minutes on average (this means it's probably not the best idea to run these notebooks); text generation, on the other hand, only took a couple dozen seconds or so for short samples.
 We trained models for thirteen presidents that we considered most notable either for their historical importance or recency:
@@ -108,7 +109,9 @@ The subsequent paragraphs could address questions including:
 Provide an account of individual members and their efforts/contributions to the specific tasks you accomplished.
 
 Rakesh - Abstract
+
 Anurag - Abstract
+
 Praveen - Trained presidential models, generated joint presidential speech
 
 ## Technical Notes and Dependencies
