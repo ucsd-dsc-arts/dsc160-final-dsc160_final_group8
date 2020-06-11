@@ -52,20 +52,30 @@ https://arxiv.org/pdf/1906.01946.pdf
 
 (10 points) 
 
-We will be using the gpt2-small model (the one with 124M parameters) to finetune a model for every president based on the speeches they made. After training we would let every model generate a passage following the given prompt "My fellow americans". 
-- gpt2 Model
-  - [code](https://github.com/openai/gpt-2)
-  - [More about gpt2 model from OpenAI](https://openai.com/blog/better-language-models/). 
-- Dataset description 
-  - The dataset comes from kaggle ([link here](https://www.kaggle.com/littleotter/united-states-presidential-speeches?select=sixth_party_corpus.csv&fbclid=IwAR2Wl6dWgOppG3TRBsktnf62jwkEmjzBl57NUj3rPnVsr77LZ5MInSCJrbI)). The dataset is a condensed collection of all the presidential speeches made by every president. The dataset was initially scraped from [here](https://millercenter.org/the-presidency/presidential-speeches)
+The dataset comes from Kaggle, as uploaded by Joseph Lilleberg. ([link here](https://www.kaggle.com/littleotter/united-states-presidential-speeches?select=corpus.csv)). The dataset was initially scraped from [the Miller Center of Public Affairs at the University of Virginia](https://millercenter.org/the-presidency/presidential-speeches), which maintains transcripts of notable speeches from every American president to date. For obvious reasons, such as differences in presidency length and the smaller number of remaining speeches from early presidents, the amount of data for each president varies.
+
+We will be using OpenAI's gpt2-small model (the one with 124M parameters) to finetune a model for every president based on the speeches they made. The gpt2 model code can be found [here](https://github.com/openai/gpt-2), and an article explaining its origins and implementation [is here](https://openai.com/blog/better-language-models/). The model is trained on 40 GB of Internet text using 8 million webpages linked from Reddit, yielding a model with (in the most advanced implementation) 1.5 billion parameters. Most importantly, we have the tools available to finetune the GPT-2 models in order to make them resemble input sample text. In order to work more easily with the model, we used Max Woolf's [gpt-2-simple Python package](https://github.com/minimaxir/gpt-2-simple), which implements many of the functions necessary to do text generation using GPT-2 models.
 
 ## Code
 
 (20 points)
-The code for preprocessing/generating training data from the kaggle dataset and the training/generating process is [here](./code/gpt2.ipynb).
-As mentioned above, the dataset for the presidential speeches was initially taken from Kaggle. The speeches in the dataset are then isolated out and stored in individual txt files for the gpt2 models to be trained on. For each training set, the model is training with maximum of 750 steps and with other hyperparameters set as default. The training time ended up taking quite a while, some methods of early stop can be considered using to minimize training time. 
-
-Link each of these items to your .ipynb or .py files within this seection, and provide a brief explanation of what the code does. Reading this section we should have a sense of how to run your code.
+The majority of the code for this project was run on UCSD's [Datahub platform](datahub.ucsd.edu), due to the availability of CPU, RAM, and especially GPU resources that are largely unavailable to most users. This does mean that folder and file references might not be consistent between notebooks, since they were run on personal instances of the Datahub.
+The code for preprocessing the presidential speech data from the kaggle dataset, training the model, and generating samples process is [here](./code/gpt2.ipynb). In this notebook, the cells for training and generating data were run repeatedly on different data/different models, which is why the notebook is so short. This is because, unfortunately, the Python session needs to be restarted in order to train a new model or generate a new text sample, so there is no use to doing this process iteratively or in order, As mentioned above, the dataset for the presidential speeches was initially taken from Kaggle. The speeches in the dataset are then isolated out and stored in individual txt files for the gpt2 models to be trained on. For each training set, the model is trained with 750 steps and with other hyperparameters set as default. Even with the ample resources and GPU clusters provided by Datahub, the training process of the model took around 20 minutes on average (this means it's probably not the best idea to run these notebooks); text generation, on the other hand, only took a couple dozen seconds or so for short samples.
+We trained models for thirteen presidents that we considered most notable either for their historical importance or recency:
+- George Washington
+- Thomas Jefferson
+- Andrew Jackson
+- Abraham Lincoln
+- Theodore Roosevelt
+- Franklin D. Roosevelt
+- John F. Kennedy
+- Richard Nixon
+- Ronald Reagan
+- Bill Clinton
+- George W. Bush
+- Barack Obama
+- Donald Trump
+Using the text files we extracted from the dataset, we trained models on the speeches of these presidents to create a GPT-2 model for each. Each 124M GPT-2 model, due to the massive number of parameters, is 500MB, meaning that it is very expensive to transfer them (and impossible to host them normally on Github.)
 
 ## Results
 
@@ -73,8 +83,7 @@ Link each of these items to your .ipynb or .py files within this seection, and p
 
 This section should summarize your results and will embed links to documentation to significant outputs. This should document both process and show artistic results. This can include figures, sound files, videos, bitmaps, as appropriate to your generative art idea. Each result should include a brief textual description, and all should be listed below: 
 
-- The output of the simulated speech given the prompt "My fellow americans, " is recorded in this [document](https://docs.google.com/document/d/1uqdmB1EyV2X_JCb5v0Z3M82cty0TxXzsgPxfxc4jo1A/edit?fbclid=IwAR0N-LUlHdfOig7Aq7d_p-YvIjDx8gMfolDy_T81vC6VhYkjuGTkKOEAtnY).
-
+Although there are a multitude of ways in which one could generate results from this data, one approach we used was to create a joint speech from all of the above presidents in chronological order, seeded with the prefix text of "My fellow Americans," a traditional beginning for a presidential speech. We passed this prefix into the model for George Washington, then using the generated text from that model, we passed the entire speech to that point into the next model, and so on. In other words, each generated sample of text was seeded with the statements of all previous statements as a prefix. You can read the generated speech [here](https://docs.google.com/document/d/1uqdmB1EyV2X_JCb5v0Z3M82cty0TxXzsgPxfxc4jo1A/edit?fbclid=IwAR0N-LUlHdfOig7Aq7d_p-YvIjDx8gMfolDy_T81vC6VhYkjuGTkKOEAtnY).
 
 ## Discussion
 
@@ -96,6 +105,7 @@ Provide an account of individual members and their efforts/contributions to the 
 
 Rakesh - Abstract
 Anurag - Abstract
+Praveen - Trained presidential models, generated joint presidential speech
 
 ## Technical Notes and Dependencies
 
