@@ -62,6 +62,7 @@ We will be using OpenAI's gpt2-small model (the one with 124M parameters) to fin
 The majority of the code for this project was run on UCSD's [Datahub platform](datahub.ucsd.edu), due to the availability of CPU, RAM, and especially GPU resources that are largely unavailable to most users. This does mean that folder and file references might not be consistent between notebooks, since they were run on personal instances of the Datahub.
 The code for preprocessing the presidential speech data from the kaggle dataset, training the model, and generating samples process is [here](./code/gpt2.ipynb). In this notebook, the cells for training and generating data were run repeatedly on different data/different models, which is why the notebook is so short. This is because, unfortunately, the Python session needs to be restarted in order to train a new model or generate a new text sample, so there is no use to doing this process iteratively or in order, As mentioned above, the dataset for the presidential speeches was initially taken from Kaggle. The speeches in the dataset are then isolated out and stored in individual txt files for the gpt2 models to be trained on. For each training set, the model is trained with 750 steps and with other hyperparameters set as default. Even with the ample resources and GPU clusters provided by Datahub, the training process of the model took around 20 minutes on average (this means it's probably not the best idea to run these notebooks); text generation, on the other hand, only took a couple dozen seconds or so for short samples.
 We trained models for thirteen presidents that we considered most notable either for their historical importance or recency:
+
 - George Washington
 - Thomas Jefferson
 - Andrew Jackson
@@ -75,6 +76,7 @@ We trained models for thirteen presidents that we considered most notable either
 - George W. Bush
 - Barack Obama
 - Donald Trump
+
 Using the text files we extracted from the dataset, we trained models on the speeches of these presidents to create a GPT-2 model for each. Each 124M GPT-2 model, due to the massive number of parameters, is 500MB, meaning that it is very expensive to transfer them (and impossible to host them normally on Github.)
 
 ## Results
@@ -114,9 +116,13 @@ Any implementation details or notes we need to repeat your work.
 - Does this code require other pip packages, software, etc?
 - Does this code need to run on some other (non-datahub) platform? (CoLab, etc.)
 
+We used [Max Woolf's gpt-2-simple Python package](https://github.com/minimaxir/gpt-2-simple) as the basis for this project, which itself uses tensorflow, regex, requests, tqdm, numpy, and toposort. We also used pandas and os for small tasks to extract the data. The code all runs on Datahub, by far most efficiently on GPU-enabled servers.
 ## Reference
 
 All references to papers, techniques, previous work, repositories you used should be collected at the bottom:
 - Papers
 - Repositories
 - Blog posts
+
+- [GPT-2 explanation](https://openai.com/blog/better-language-models/) and [code](https://github.com/openai/gpt-2)
+- [gpt-2-simple](https://github.com/minimaxir/gpt-2-simple)
