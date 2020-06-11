@@ -113,13 +113,12 @@ Provide an account of individual members and their efforts/contributions to the 
 Rakesh - Abstract, write-up, presentation
 
 Anurag - Abstract
+
 Praveen - Trained presidential models, generated joint presidential speech
+
 Mizuki - Write up, presentation
+
 Shutong - 
-
-
-
-Praveen - Trained presidential models, generated joint presidential speech
 
 ## Technical Notes and Dependencies
 
