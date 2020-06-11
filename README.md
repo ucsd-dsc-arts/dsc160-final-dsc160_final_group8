@@ -13,7 +13,7 @@ Project Team Members:
 
 (10 points) 
 
-For the project proposal, please write a short abstact addressing the questions below. You need to replace the entire contents of this section with one to two paragraphs addressing the following:
+For the project proposal, please write a short abstract addressing the questions below. You need to replace the entire contents of this section with one to two paragraphs addressing the following:
 
 - What is your concept for a generative art project?
 - What methods/networks/techniques will you employ (include links to technical precedents/code bases)
@@ -91,7 +91,7 @@ Although there are a multitude of ways in which one could generate results from 
 
 (30 points, three to five paragraphs)
 
-The outputs captures the rhetorics of each presidents extremely well. For instance, Trump's speech consists of unassuming wording and structure as well as his iconic MAGA phrase; Obama's speech mimics his crips speech structure with the strong and effective repetition. In addition, the semantics are well-captured as well. Trump and Obama again are the two good examples. The simulated speech from the former promotes strong nationalism and almost militarism while the one from the latter promotes general welfare for the country. In short, the simulated speeches understands the rough ideology behind each president. Aside from the capture of the semantics and the rhetorics, the interesting thing is that the historical period in which each president makes their speech largely defines the tone and the subcontext of each simulated speech. 
+The outputs capture the rhetoric of each president fairly well. For instance, President Trump's speech consists of fairly simple wording about American exceptionalism and military supremacy as well as his iconic "Make America Great Again" catchphrase; President Obama's speech mimics his more professional speech structure with repetition. Meanwhile, earlier presidents produce more formal language, as was common in political speeches of the time. In addition, the content of the speeches reflects what we'd expect from these presidents fairly well. Once again, we can look to  Trump and Obama for examples. The simulated speech from Trump promotes strong nationalism, American exceptionalism, and militarism, while the one from the latter promotes international trade, multilateralism, and the rhetoric of recovery from the Great Recession that President Obama sought to highlight. There are other examples: we see Franklin Roosevelt, widely considered the most economically progressive president in American history, mention labor issues; we see John F. Kennedy mention anti-poverty programs, which he and his successor Lyndon B. Johnson introduced in the 1960s; we also see George W. Bush, a pro-business president who instituted widespread tax cuts, mention the economy and consumer behavior as vital to American security and welfare. In short, the simulated speeches seem to track the rough ideology behind each president, even in these short samples. Aside from the capture of the semantics and the rhetorics, the interesting thing is that the historical period in which each president makes their speech largely defines the tone and the subcontext of each simulated speech. 
 
 
 The subsequent paragraphs could address questions including:
