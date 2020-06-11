@@ -25,7 +25,7 @@ For the project proposal, please write a short abstact addressing the questions 
 - Why is it interesting? (personally, culturally, politically, other)
 - List three papers / art projects that are references for this work.
 
-The concept for our generative art project is to look into various speeches and addresses, both verbally and written, given by presidents of the United States of America in order to generate speeches that will be based off of an inputted keyword. We plan on using OpenAI's GPT-2 text models in order to generate our text. For our training data, we will use data from presidential speeches. We hope that our system will produce speeches that, from inputted keywords, produce speeches that can mimic diplomatic and political language while being based around the keywords. Our output will be presented by the model in text form, and we hope to present some examples in a creative manner such as spoken form. 
+The concept for our generative art project is to look into various speeches and addresses, both verbally and written, given by different presidents of the United States of America in order to generate speeches that will be based off of an inputted keyword or phrase. We plan on using OpenAI's GPT-2 text models in order to generate our text. We will be training different models for a few select presidents who we consider to stand out in terms of their speech. For our training data, we will use data from presidential speeches. We hope that our system will produce speeches that, from inputted keywords, produce speeches that can mimic diplomatic and political language while being based around the keywords. We hope to be able to compare how different presidents will produce speeches and each of the models will be able to embody the speech style of a certain president. Our output will be presented by the model in text form, and we hope to present some examples in a creative manner such as spoken form. 
 
 The first matter on the table is the pre-processing of this data. For this matter, we hope to employ the sk-learn's n-grams and POS Taggers to determine and classify words of interest. From then on, we will use an RNN much like Stanford's char-rnn (https://github.com/karpathy/char-rnn) to generate the text based on given keywords. We can also use latent Dirichlet allocation along the lines of Valentin Kassarnig to better judge what groups of words belong to certain topics. The final matter of concern is the training of our AI. We plan to use an AWS' EC2 compute instances to cost-effectively train our model.
 
@@ -96,6 +96,11 @@ Provide an account of individual members and their efforts/contributions to the 
 
 Rakesh - Abstract
 Anurag - Abstract
+Praveen - Trained presidential models, generated joint presidential speech
+Mizuki - Write up, presentation
+Shutong - 
+
+
 
 ## Technical Notes and Dependencies
 
