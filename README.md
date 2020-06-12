@@ -13,20 +13,7 @@ Project Team Members:
 
 (10 points) 
 
-For the project proposal, please write a short abstract addressing the questions below. You need to replace the entire contents of this section with one to two paragraphs addressing the following:
-
-- What is your concept for a generative art project?
-- What methods/networks/techniques will you employ (include links to technical precedents/code bases)
-- What training data (if any) will you use for your project?
-- What kind of results do you hope that your system will produce?
-- How will you present your result/what form will your output take?
-- What if any challenges to you think may arise as you are working with this?
-- How are you expanding on topics we have covered in class?
-- Why is it interesting? (personally, culturally, politically, other)
-- List three papers / art projects that are references for this work.
-
-Every president in the US history has their own distinct ideology and personality, evident from and propagated through their rhetorics and styles in their presidential speeches. The concepts for our generative art project are 1) experiment with fusing various narratives of presidents into making one coherent but relatively contextless speech  2) explore what happens when we force a narrative of a previous president into a distinct context of contemporary social-political matters 3) analyze what constitutes as the essence of the characteristics of a president's speech. To realize concept 1 we created a joint speech where we started off with a generic and contextless prefix, and then input into every model, ordered by their corresponding presidents chronologically, the joined output of the previous model. To realize concept 2 we aim to let multiple previous presidents finish a speech started by Donald Trump. For concept 3 - we are focusing our experiment on Trump alone - we decided to gradually increase the temperature of a generated text under a fixed prompt of what Trump once said and see what is the last to be lost before the text devolves into non-sensical gibberish. We plan on using OpenAI's GPT-2 text models in order to generate our text. We will be training different models for a few select presidents who we consider to stand out in terms of their speech. For our training data, we will use data from presidential speeches. We will train 124M models, which are named to represent the number of parameters used in the model, on speeches given by selected preisdents, training a model to each president. From here, we will use the GPT-2 model along with inputted prefixes such as phrases, sentences, or paragraphs in order to see how each president would complete a certain speech based on its intro. We hope that our system will produce speeches that, from inputted keywords, produce speeches that can mimic diplomatic and political language while being based around the keywords. We hope to be able to compare how different presidents will produce speeches and each of the models will be able to embody the speech style of a certain president. Our output will be presented by the model in text form, and we hope to present some examples in a creative manner such as spoken form. 
-
+Every president in the US history has their own distinct ideology and personality, evident from and propagated through their rhetoric and styles in their presidential speeches. The concepts for our generative art project are 1) to experiment with fusing various narratives of presidents into making one coherent but relatively contextless speech, 2) to explore what happens when we force a narrative of a previous president into a distinct context of contemporary social-political matters, and 3) analyze what constitutes as the essence of the characteristics of a president's speech. To realize concept 1 we created a joint speech where we started off with a generic and contextless prefix, and then input into every model successively, ordered by their corresponding presidents chronologically, the joined output of the previous model. To realize concept 2 we aim to let multiple previous presidents finish a speech started by Donald Trump. For concept 3 - focusing our experiment on Trump alone - we decided to gradually increase the temperature of a generated text under a fixed prompt of what Trump once said and see what is the last to be lost before the text devolves into non-sensical gibberish. We plan on using OpenAI's GPT-2 text models in order to generate our text. We will be training different models for a few select presidents who we consider to stand out in terms of their speech. For our training data, we will use data from presidential speeches. We will train 124M models, which are named to represent the number of parameters used in the model, on speeches given by selected preisdents, training a model to each president. From here, we will use the GPT-2 model along with inputted prefixes such as phrases, sentences, or paragraphs in order to see how each president would complete a certain speech based on its intro. We hope that our system will produce speeches that, from inputted keywords, produce speeches that can mimic diplomatic and political language while being based around the keywords. We hope to be able to compare how different presidents will produce speeches and each of the models will be able to embody the speech style of a certain president. Our output will be presented by the model in text form, and we hope to present some examples in a creative manner such as spoken form. 
 
 Some challenges we believe may be faced can be thematic issues in produced speeches, which we believe may come up due to models potentially not understanding the meanings of the words it is putting into its output. Also, broad and non-specific keywords may produce speeches that might not have any direction. We will be expanding upon concepts covered in the class such as generative art text, as seen in Lecture 9, utilizing generative systems. We find this interesting culturally, and politically, since it reflects trends in presidents' political speech over time and between varying kinds of administration. It will be interesting to see how different keywords yield different word choices used in the outputs and whether certain keyword inputs relate to certain time periods and therefore certain language choices. It will also be interesting politically to see the word choices of heads of states and to see what sorts of language are common amongst all the different speeches within the dataset. 
 
@@ -51,7 +38,7 @@ https://arxiv.org/pdf/1906.01946.pdf
 
 (10 points) 
 
-The dataset comes from Kaggle, as uploaded by Joseph Lilleberg. ([link here](https://www.kaggle.com/littleotter/united-states-presidential-speeches?select=corpus.csv)). The dataset was initially scraped from [the Miller Center of Public Affairs at the University of Virginia](https://millercenter.org/the-presidency/presidential-speeches), which maintains transcripts of notable speeches from every American president to date. For obvious reasons, such as differences in presidency length and the smaller number of remaining speeches from early presidents, the amount of data for each president varies.
+The dataset comes from Kaggle, as created and uploaded by Joseph Lilleberg. ([link here](https://www.kaggle.com/littleotter/united-states-presidential-speeches?select=corpus.csv)). The dataset was initially scraped from [the Miller Center of Public Affairs at the University of Virginia](https://millercenter.org/the-presidency/presidential-speeches), which maintains transcripts of notable speeches from every American president to date. For obvious reasons, such as differences in presidency length and the smaller number of remaining speeches from early presidents, the amount of data for each president varies.
 
 We will be using OpenAI's gpt2-small model (the one with 124M parameters) to finetune a model for every president based on the speeches they made. The gpt2 model code can be found [here](https://github.com/openai/gpt-2), and an article explaining its origins and implementation [is here](https://openai.com/blog/better-language-models/). The model is trained on 40 GB of Internet text using 8 million webpages linked from Reddit, yielding a model with (in the most advanced implementation) 1.5 billion parameters. Most importantly, we have the tools available to finetune the GPT-2 models in order to make them resemble input sample text. In order to work more easily with the model, we used Max Woolf's [gpt-2-simple Python package](https://github.com/minimaxir/gpt-2-simple), which implements many of the functions necessary to do text generation using GPT-2 models.
 
@@ -59,7 +46,7 @@ We will be using OpenAI's gpt2-small model (the one with 124M parameters) to fin
 
 (20 points)
 
-The code for preprocessing the presidential speech data from the kaggle dataset, training the model, and generating text is present in both the notebook for [narrative fusion](./code/gpt2.ipynb) and the one for [forcing narratives and speech essence analysis](./code/speech_sim.ipynb).  The former deals with concept 1 in the abstract while the latter deals with concept 2 and 3. As mentioned above, the dataset for the presidential speeches was initially taken from Kaggle. The speeches in the dataset are then isolated out and stored in individual txt files to provide fine-tuning on the gpt2 model. For each text file, a fresh model is trained with maximum of 750 steps and with other hyperparameters set as default. Even though increasing batch_size is considered to increase training efficiency, the idea is eventually given up when leveraged against VRAM usage when training with GPU. While training with CPU does not have such concern, the training time for one model under CPU-support ended up taking hours on end. Considering we many models to train, runtime speedup is extremely precious to us. Therefore we decides to use tf-gpu to speed up the training process despite the memory limitation that prevents us from optimizing training result.
+The code for preprocessing the presidential speech data from the kaggle dataset, training the model, and generating text is present in both the notebook for [narrative fusion](./code/gpt2.ipynb) and the one for [forcing narratives and speech essence analysis](./code/speech_sim.ipynb).  The former deals with concept 1 in the abstract while the latter deals with concept 2 and 3. As mentioned above, the dataset for the presidential speeches was initially taken from Kaggle. The speeches in the dataset are then isolated out and stored in individual .txt files to provide fine-tuning on the gpt2 model. For each text file, a fresh model is trained with maximum of 750 steps and with other hyperparameters set as default. Even though increasing batch_size is considered to increase training efficiency, the idea is eventually given up when leveraged against VRAM usage when training with GPU. While training with CPU does not have such concern, the training time for one model under CPU-support ended up taking hours on end. Considering we many models to train, runtime speedup is extremely precious to us. Therefore we decides to use tf-gpu to speed up the training process despite the memory limitation that prevents us from optimizing training result.
 
 The specific presidents chosen to have gpt2 models finetuned over their speeches are:
 
@@ -76,6 +63,7 @@ The specific presidents chosen to have gpt2 models finetuned over their speeches
 - George W. Bush
 - Barack Obama
 - Donald Trump
+
 These presidents are considered either for their historical importance or recency.
 
 
@@ -83,17 +71,13 @@ These presidents are considered either for their historical importance or recenc
 
 (30 points) 
 
-This section should summarize your results and will embed links to documentation to significant outputs. This should document both process and show artistic results. This can include figures, sound files, videos, bitmaps, as appropriate to your generative art idea. Each result should include a brief textual description, and all should be listed below: 
-
-- The output of the joint simulated speech given the prompt "My fellow americans, " is recorded in this [document](https://docs.google.com/document/d/1uqdmB1EyV2X_JCb5v0Z3M82cty0TxXzsgPxfxc4jo1A/edit?fbclid=IwAR0N-LUlHdfOig7Aq7d_p-YvIjDx8gMfolDy_T81vC6VhYkjuGTkKOEAtnY). Most of the time, we just selected the first output that the model generated unless under rare occasions the sampled text suffers from extreme lack in semantics due to erros such as encoding problems, over-repetition of phrases etc, in which case we simply re-run the model to generate a different sample. The generated speeches are mostly logically coherent *per narrator* and seems like it could be a real, abeit disjointed, presidential speech. You can read the generated speech [here](https://docs.google.com/document/d/1uqdmB1EyV2X_JCb5v0Z3M82cty0TxXzsgPxfxc4jo1A/edit?fbclid=IwAR0N-LUlHdfOig7Aq7d_p-YvIjDx8gMfolDy_T81vC6VhYkjuGTkKOEAtnY).
+- The output of the joint simulated speech given the prompt "My fellow americans, " is recorded in this [document](https://docs.google.com/document/d/1uqdmB1EyV2X_JCb5v0Z3M82cty0TxXzsgPxfxc4jo1A/edit?fbclid=IwAR0N-LUlHdfOig7Aq7d_p-YvIjDx8gMfolDy_T81vC6VhYkjuGTkKOEAtnY). Most of the time, we just selected the first output that the model generated unless under rare occasions the sampled text suffers from extreme lack of coherency due to errors such as encoding problems, over-repetition of phrases etc, in which case we simply re-run the model to generate a different sample. The generated speeches are mostly logically coherent *within each president's section* and seems like it could be a real, abeit disjointed, presidential speech. You can read the generated speech [here](https://docs.google.com/document/d/1uqdmB1EyV2X_JCb5v0Z3M82cty0TxXzsgPxfxc4jo1A/edit?fbclid=IwAR0N-LUlHdfOig7Aq7d_p-YvIjDx8gMfolDy_T81vC6VhYkjuGTkKOEAtnY).
 
 - The output of the integrate narrative, namely having Trump's speech finished in the style of other presidents is documented [here](https://docs.google.com/document/d/18HwZG9Am-g-p1L4gTJs10BPZwvPtNSPnSR_GMh6OOpA/edit). We can see that the further back time in history that we are deploying as the style for the text generation, the more incoherent it gets with respect to the original.
 
 - The output of Trump's simulated speech under increasing temperature is documented [here](https://docs.google.com/document/d/1t1U0tmrGFVRuhYkrHydbMnJAXf4kjhEed2wcpBzog7o/edit). The prefix was an excerpt from Trump's 2017 inaugural address. The increasing temperature appear to blur the context of the speech but the nationalist sentiment in the speeches never seem to dwindle. 
 
 In addition, in the [/results/samples](./results/samples) folder, we have included the successive samples at each 100th training step milestone that gpt-2-simple automatically outputs. Here, you can see random (unseeded) text from the models of each president at different stages of training. 
-
-On the other hand, 
 
 ## Discussion
 
@@ -111,13 +95,6 @@ The ethical concerns behind this project, relative to many other generative data
 
 One way we might expand on this project is to generate more context-sensitive text by selecting specific types of speeches to train on. In this project, we just threw all of a president's speeches from the Miller Center into the model. But in theory, we could instead have separated the models based on specific types of speech -- State of the Union, National Prayer Breakfast, inaugural addresses, and so on. In this way, we might be able to match the differences in speaking style that speeches at these different events might contain, making even more convincing versions of real speeches. One could also combine this project with a speech synthesis model trained on any of the presidents with enough available audio samples in order to create a genuine-sounding audio speech, which would be a more engaging way of utilizing our text models. 
 
-The subsequent paragraphs could address questions including:
-- Why is this culturally innovative?
-- How does your generative computational approach differ from traditional art/music/cultural production? 
-- How do your results relate to broader social, cultural, economic political, etc., issues? 
-- What are the ethical concerns for this form of generative art? 
-- In what future directions could you expand this work?
-
 ## Team Roles
 
 Provide an account of individual members and their efforts/contributions to the specific tasks you accomplished.
@@ -133,11 +110,6 @@ Mizuki - Write up, presentation
 Shutong - Write up, experiment of forcing narrative and analyzing defining features (essence) of Trump's speech
 
 ## Technical Notes and Dependencies
-
-Any implementation details or notes we need to repeat your work. 
-- Additional libraries you are using for this project
-- Does this code require other pip packages, software, etc?
-- Does this code need to run on some other (non-datahub) platform? (CoLab, etc.)
 
 We used [Max Woolf's gpt-2-simple Python package](https://github.com/minimaxir/gpt-2-simple) as the basis for this project, which itself uses tensorflow, regex, requests, tqdm, numpy, and toposort. We also used pandas and os for small tasks to extract the data. The code all runs on Datahub, by far most efficiently on GPU-enabled servers.
 
