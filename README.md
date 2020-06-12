@@ -103,7 +103,7 @@ Rakesh - Abstract, write-up, presentation
 
 Anurag - Abstract
 
-Praveen - Trained presidential models, generated joint presidential speech
+Praveen - Trained presidential models, generated joint presidential speech, writeup
 
 Mizuki - Write up, presentation
 
